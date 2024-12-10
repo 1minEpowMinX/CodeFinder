@@ -30,7 +30,7 @@ def process_xml_files_recursively(directory, target_code, results_file):
     with open(results_file, 'a', encoding='utf-8') as result_f:
         for root_dir, _, files in os.walk(directory):  # Рекурсивный обход
             for filename in files:
-                if filename.endswith(".xml"):  # Только XML файлы
+                if filename.lower().endswith(".xml"):  # Только XML файлы
                     filepath = os.path.join(root_dir, filename)
                     try:
                         # Парсинг XML-файла
